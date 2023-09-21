@@ -11,6 +11,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 16px;
+    overflow-y: scroll; 
+    scroll-behavior: smooth;
   }
   
   .image-container {
@@ -20,10 +22,15 @@
     background-color: #fff;
     padding: 10px;
     text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    cursor: grab;
+    transition: transform 0.2s ease;
   }
   
+  .image-container.is-dragging {
+    transform: scale(1.05);
+    cursor: grabbing;
+  }
+
   .image-container:hover {
     transform: scale(1.05);
   }
